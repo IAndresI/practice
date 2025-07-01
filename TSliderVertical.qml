@@ -90,7 +90,7 @@ Item {
                     ctx.fill()
                     
                     // Черный бордер
-                    ctx.strokeStyle = "black"
+                    ctx.strokeStyle = "white"
                     ctx.lineWidth = 1
                     ctx.stroke()
                 }
@@ -214,7 +214,7 @@ Item {
                     ctx.fill()
                     
                     // Черный бордер
-                    ctx.strokeStyle = "black"
+                    ctx.strokeStyle = "white"
                     ctx.lineWidth = 1
                     ctx.stroke()
                 }

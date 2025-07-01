@@ -84,7 +84,7 @@ Item {
                     ctx.fill()
                     
                     // Черный бордер
-                    ctx.strokeStyle = "black"
+                    ctx.strokeStyle = "white"
                     ctx.lineWidth = 1
                     ctx.stroke()
                 }
@@ -102,7 +102,7 @@ Item {
             id: progressContainer
             width: implicitWidth
             height: parent.height
-            implicitWidth: 9.5 * lineThickness + 96  // автоматическая ширина на основе содержимого
+            implicitWidth: lineThickness + 103  // автоматическая ширина на основе содержимого
             
             Item {
                 anchors.centerIn: parent
@@ -215,7 +215,7 @@ Item {
                     ctx.fill()
                     
                     // Черный бордер
-                    ctx.strokeStyle = "black"
+                    ctx.strokeStyle = "white"
                     ctx.lineWidth = 1
                     ctx.stroke()
                 }

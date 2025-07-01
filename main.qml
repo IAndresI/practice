@@ -10,21 +10,12 @@ Window {
     color: "#f0f0f0"
     
     Column {
-        anchors.centerIn: parent
-        spacing: 40
-        
-        // Заголовок
-        Text {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: "Slider Container"
-            font.pixelSize: 24
-            font.family: Style.fontFamily
-            color: Style.textEnabled
-        }
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+        anchors.leftMargin: 30
         
         // Контейнер с 8 слайдерами
         SliderContainer {
-            anchors.horizontalCenter: parent.horizontalCenter
             backgroundColor: "#33000000"  // пример с белым фоном
         }
     }
