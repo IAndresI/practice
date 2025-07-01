@@ -1,0 +1,4 @@
+singleton Style 1.0 Style.qml
+TSliderHorizontal 1.0 TSliderHorizontal.qml
+TSliderVertical 1.0 TSliderVertical.qml
+SliderContainer 1.0 SliderContainer.qml

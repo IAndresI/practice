@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Style.qml</file>
+        <file>TLabel.qml</file>
+        <file>TSliderHorizontal.qml</file>
+        <file>TSliderVertical.qml</file>
+        <file>SliderContainer.qml</file>
+        <file>qmldir</file>
+    </qresource>
+</RCC>
