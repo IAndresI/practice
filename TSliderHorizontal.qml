@@ -78,7 +78,7 @@ Item {
                     ctx.fillStyle = triangleColor
                     ctx.beginPath()
                     ctx.moveTo(width, 0)
-                    ctx.lineTo(0, height / 2)
+                    ctx.lineTo(0, (height) / 2)
                     ctx.lineTo(width, height)
                     ctx.closePath()
                     ctx.fill()
