@@ -9,17 +9,18 @@ Item {
     property color textColor: "#ffffff" // цвет текста
     property int fontSize: Style.FontPixelSize.Normal // размер текста
     property int lineThickness: 2 // ширина линий
+    property int depthValue: 0 // параметр величины глубины (1,2,0)
     property double speed: 0 // скорость
     property double bowDistance: 0 // расстояние нос
     property double sternDistance: 0 // расстояние корма
-    property double environmentDistance: 0 // расстояние сред
+    property double meanDistance: 0 // расстояние сред
     property double degree: 0 // угол
     property var sliderValues: [8, 12, 10, 5, 7, 4, 6, 9]  // массив значений для 8 слайдеров
     property var sliderUnreliable: [false, false, false, false, false, false, false, false]  // массив булиновских значений
 
     // Размеры контейнера
     width: 330
-    height: 800
+    height: 820
 
     // Фон
     Rectangle {
@@ -29,11 +30,11 @@ Item {
     }
 
     Column {
-        padding: 26
+        padding: 20
         width: parent.width
 
         Column {
-            width: parent.width - 52
+            width: parent.width - 40
             spacing: 5
 
             // Ряд 1: Два вертикальных слайдера
@@ -58,7 +59,8 @@ Item {
 
                     TLabel {
                         id: speedLabel
-                        text: "Скорость: " + root.speed.toFixed(1)  + " м/с"
+                        //  "Скорость: " +
+                        text:root.speed.toFixed(1)  + " м/с"
                         anchors.horizontalCenter: parent.horizontalCenter
                         color: textColor
                         font.pointSize: fontSize
@@ -66,7 +68,8 @@ Item {
 
                     TLabel {
                         id: bowDistanceLabel
-                        text: "Расст. нос: " + root.bowDistance.toFixed(1) + " м"
+                        // "Расст. нос: " +
+                        text: root.bowDistance.toFixed(1) + " м" + (root.depthValue === 0 ? " ◄" : "")
                         anchors.horizontalCenter: parent.horizontalCenter
                         color: textColor
                         font.pointSize: fontSize
@@ -74,12 +77,15 @@ Item {
 
                     TLabel {
                         id: degreeLabel
-                        text: "Угол: " + root.degree.toFixed(1) + "°"
+                        // "Угол: " +
+                        text: root.degree.toFixed(1) + "°"
                         anchors.horizontalCenter: parent.horizontalCenter
                         visible: root.degree >= 0
                         color: textColor
                         font.pointSize: fontSize
                     }
+
+
                 }
 
                 TSliderVertical {
@@ -92,6 +98,15 @@ Item {
                     isUnreliable: root.sliderUnreliable[1] || false
                     unreliableLineColor: "#234535"
                 }
+            }
+
+            TLabel {
+                id: meanLabel
+                // "Угол: " +
+                text: root.meanDistance.toFixed(1) + " м" + (root.depthValue === 1 ? " ◄" : "")
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: textColor
+                font.pointSize: fontSize
             }
 
             // Ряд 2: Горизонтальный слайдер по центру
@@ -156,7 +171,8 @@ Item {
 
                     TLabel {
                         id: sternDistanceLabel
-                        text: "Расст. корма: " + root.sternDistance.toFixed(1) + " м"
+                        // "Расст. корма: " +
+                        text:  root.sternDistance.toFixed(1) + " м" + (root.depthValue === 2 ? " ◄" : "")
                         anchors.horizontalCenter: parent.horizontalCenter
                         color: root.textColor
                         font.pointSize: fontSize
@@ -164,7 +180,8 @@ Item {
 
                     TLabel {
                         id: negativeDegreeLabel
-                        text: "Угол: " + root.degree.toFixed(1) + "°"
+                        // "Угол: " +
+                        text:  root.degree.toFixed(1) + "°"
                         anchors.horizontalCenter: parent.horizontalCenter
                         color: root.textColor
                         font.pointSize: fontSize

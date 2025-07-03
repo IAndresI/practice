@@ -107,7 +107,7 @@ Item {
         Item {
             id: progressContainer
             width: parent.width
-            height: lineThickness + 103  // фиксированная высота
+            height: lineThickness + 103
                 
                 // 4 линии сверху (для положительных отклонений - выше среднего)
                 Repeater {

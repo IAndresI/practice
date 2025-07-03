@@ -26,7 +26,9 @@ Window {
             sliderValues: [8, 15, 8, 3, 12, 2, 9, 14]  // значения для каждого слайдера
             bowDistance: 6.6 // расстояние нос
             sternDistance: 4.7 // расстояние корма
-            environmentDistance: 2.4 // расстояние сред
+            meanDistance: 2.4 // расстояние сред
+            depthValue: 1 // параметр величины глубины (1,2,0)
+            speed: 10 //. Скорость
             degree: 5.5 // угол
             sliderUnreliable: [false, true, false, true, false, true, false, true]  // правильность данных
         }
