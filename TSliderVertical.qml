@@ -74,15 +74,18 @@ Item {
                     if (normalizedDeviation > 0) return isUnreliable ? unreliableLineColor : normalLineColor
                     return "transparent"
                 }
+                property real lineThickness: root.lineThickness
+                
                 onTriangleColorChanged: requestPaint()
                 Component.onCompleted: requestPaint()
+                onLineThicknessChanged: requestPaint()
                 
                 onPaint: {
                     var ctx = getContext("2d")
                     ctx.clearRect(0, 0, width, height)
                     
                     // Учитываем толщину линии для корректного размещения внутри границ
-                    var offset = root.lineThickness / 2
+                    var offset = lineThickness / 2
                     
                     ctx.fillStyle = triangleColor
                     ctx.beginPath()
@@ -94,7 +97,7 @@ Item {
                     
                     // Черный бордер
                     ctx.strokeStyle = "white"
-                    ctx.lineWidth = root.lineThickness
+                    ctx.lineWidth = lineThickness
                     ctx.stroke()
                 }
             }
@@ -201,15 +204,18 @@ Item {
                     if (normalizedDeviation < 0) return isUnreliable ? unreliableLineColor : normalLineColor
                     return "transparent"
                 }
+                property real lineThickness: root.lineThickness
+                
                 onTriangleColorChanged: requestPaint()
                 Component.onCompleted: requestPaint()
+                onLineThicknessChanged: requestPaint()
                 
                 onPaint: {
                     var ctx = getContext("2d")
                     ctx.clearRect(0, 0, width, height)
                     
                     // Учитываем толщину линии для корректного размещения внутри границ
-                    var offset = root.lineThickness / 2
+                    var offset = lineThickness / 2
                     
                     ctx.fillStyle = triangleColor
                     ctx.beginPath()
@@ -221,7 +227,7 @@ Item {
                     
                     // Черный бордер
                     ctx.strokeStyle = "white"
-                    ctx.lineWidth = root.lineThickness
+                    ctx.lineWidth = lineThickness
                     ctx.stroke()
                 }
             }

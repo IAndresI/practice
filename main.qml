@@ -20,8 +20,9 @@ Window {
         anchors.leftMargin: 30
         
         SliderContainer {
+            id: sliderContainer
             backgroundColor: "#33ffffff" // цвет подложки
-            lineThickness: 3 // ширина линий у слайдеров
+            lineThickness: 5 // ширина линий у слайдеров
             fontSize: Style.FontPixelSize.Normal // Размер текста
             sliderValues: [8, 15, 8, 3, 12, 2, 9, 14]  // значения для каждого слайдера
             bowDistance: 6.6 // расстояние нос
@@ -32,5 +33,16 @@ Window {
             degree: -5.5 // угол
             sliderUnreliable: [false, true, false, true, false, true, false, true]  // правильность данных
         }
+        
+        // Timer для проверки динамического изменения lineThickness
+        // Timer {
+        //     interval: 2000
+        //     running: true
+        //     repeat: true
+        //     onTriggered: {
+        //         sliderContainer.lineThickness = sliderContainer.lineThickness === 5 ? 1 : 5
+        //         console.log("LineThickness changed to:", sliderContainer.lineThickness)
+        //     }
+        // }
     }
 }
