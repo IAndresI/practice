@@ -75,17 +75,20 @@ Item {
                     var ctx = getContext("2d")
                     ctx.clearRect(0, 0, width, height)
                     
+                    // Учитываем толщину линии для корректного размещения внутри границ
+                    var offset = root.lineThickness / 2
+                    
                     ctx.fillStyle = triangleColor
                     ctx.beginPath()
-                    ctx.moveTo(width, 0)
-                    ctx.lineTo(0, (height) / 2)
-                    ctx.lineTo(width, height)
+                    ctx.moveTo(width - offset, offset)
+                    ctx.lineTo(offset, height / 2)
+                    ctx.lineTo(width - offset, height - offset)
                     ctx.closePath()
                     ctx.fill()
                     
                     // Черный бордер
                     ctx.strokeStyle = "white"
-                    ctx.lineWidth = 1
+                    ctx.lineWidth = root.lineThickness
                     ctx.stroke()
                 }
             }
@@ -206,17 +209,20 @@ Item {
                     var ctx = getContext("2d")
                     ctx.clearRect(0, 0, width, height)
                     
+                    // Учитываем толщину линии для корректного размещения внутри границ
+                    var offset = root.lineThickness / 2
+                    
                     ctx.fillStyle = triangleColor
                     ctx.beginPath()
-                    ctx.moveTo(0, 0)
-                    ctx.lineTo(width, height / 2)
-                    ctx.lineTo(0, height)
+                    ctx.moveTo(offset, offset)
+                    ctx.lineTo(width - offset, height / 2)
+                    ctx.lineTo(offset, height - offset)
                     ctx.closePath()
                     ctx.fill()
                     
                     // Черный бордер
                     ctx.strokeStyle = "white"
-                    ctx.lineWidth = 1
+                    ctx.lineWidth = root.lineThickness
                     ctx.stroke()
                 }
             }

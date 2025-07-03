@@ -166,7 +166,7 @@ Item {
 
                 // Центральные значения между слайдерами
                 Column {
-                    anchors.centerIn: parent
+                    anchors.horizontalCenter: parent.horizontalCenter
                     spacing: 8
 
                     TLabel {

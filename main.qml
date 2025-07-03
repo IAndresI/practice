@@ -21,7 +21,7 @@ Window {
         
         SliderContainer {
             backgroundColor: "#33ffffff" // цвет подложки
-            lineThickness: 2 // ширина линий у слайдеров
+            lineThickness: 3 // ширина линий у слайдеров
             fontSize: Style.FontPixelSize.Normal // Размер текста
             sliderValues: [8, 15, 8, 3, 12, 2, 9, 14]  // значения для каждого слайдера
             bowDistance: 6.6 // расстояние нос
@@ -29,7 +29,7 @@ Window {
             meanDistance: 2.4 // расстояние сред
             depthValue: 1 // параметр величины глубины (1,2,0)
             speed: 10 //. Скорость
-            degree: 5.5 // угол
+            degree: -5.5 // угол
             sliderUnreliable: [false, true, false, true, false, true, false, true]  // правильность данных
         }
     }
