@@ -9,6 +9,19 @@ Window {
     title: qsTr("Practice")
     color: "#f0f0f0"
 
+    CompassScale {
+        id: compass
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        width: parent.width * 0.5
+        height: 120
+        value: 0 // Текущее значение шкалы
+        fontSize: Style.FontPixelSize.Normal // Размер шрифта
+        backgroundColor: "#000000" // Цвет подложки
+        tickColor: "#ffffff" // Цвет шкалы
+        indicatorColor: "#ff0000" // Цвет линии, отображающей текущее значение (по умолчанию красный)
+    }
+
     Rectangle {
         anchors.fill: parent
         color: "#000000"
@@ -34,15 +47,29 @@ Window {
             sliderUnreliable: [false, true, false, true, false, true, false, true]  // правильность данных
         }
         
-        // Timer для проверки динамического изменения lineThickness
-        // Timer {
-        //     interval: 2000
-        //     running: true
-        //     repeat: true
-        //     onTriggered: {
-        //         sliderContainer.lineThickness = sliderContainer.lineThickness === 5 ? 1 : 5
-        //         console.log("LineThickness changed to:", sliderContainer.lineThickness)
-        //     }
-        // }
+         //Timer для проверки динамического изменения lineThickness
+//         Timer {
+//             interval: 2000
+//             running: true
+//             repeat: true
+//             onTriggered: {
+//                 sliderContainer.lineThickness = sliderContainer.lineThickness === 5 ? 1 : 5
+//                 console.log("LineThickness changed to:", sliderContainer.lineThickness)
+//             }
+//         }
+
+         //Timer для проверки динамического изменения CompassScale
+         Timer {
+             interval: 1000
+             running: true
+             repeat: true
+             onTriggered: {
+                 var delta
+                 do {
+                     delta = Math.floor(Math.random() * 25) - 12;
+                  } while (delta === 0);      // чтобы не остаться на месте
+                 compass.value = (compass.value + delta + 360) % 360;
+             }
+         }
     }
 }

@@ -7,5 +7,6 @@
         <file>TSliderVertical.qml</file>
         <file>SliderContainer.qml</file>
         <file>qmldir</file>
+        <file>CompassScale.qml</file>
     </qresource>
 </RCC>
