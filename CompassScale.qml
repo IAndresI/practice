@@ -13,6 +13,11 @@ Item {
     property color tickColor: "#ffffff" // штрихи и подписи
     property color indicatorColor: "#ff0000" // центральная палочка
     property color valueTextColor: tickColor // цвет значения под палочкой
+
+    property color labelColor: tickColor // цвет числовых подписей по шкале
+    property real  tickLineWidth: 2 // толщина штрихов шкалы
+    property real  indicatorLineWidth: 3 // толщина центральной палочки
+
     property real  degreesInView: 120 // охват по горизонтали
 
     implicitWidth: 960
@@ -35,8 +40,8 @@ Item {
 
             /* ── деления и цифры ── */
             ctx.strokeStyle = tickColor;
-            ctx.fillStyle = tickColor;
-            ctx.lineWidth = 2;
+            ctx.lineWidth   = tickLineWidth;
+            ctx.fillStyle   = labelColor;
             ctx.font = (fs * 0.9) + "px sans-serif";
             ctx.textAlign = "center";
             ctx.textBaseline = "top";
@@ -61,7 +66,7 @@ Item {
             //центральная палочка
             const cx = width / 2;
             ctx.strokeStyle = indicatorColor;
-            ctx.lineWidth = 3;
+            ctx.lineWidth = indicatorLineWidth;
             ctx.beginPath();
             ctx.moveTo(cx, 0);
             ctx.lineTo(cx, height - fontSize * 1.4 - 4);

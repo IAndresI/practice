@@ -20,18 +20,22 @@ Window {
         backgroundColor: "#000000" // Цвет подложки
         tickColor: "#ffffff" // Цвет шкалы
         indicatorColor: "#ff0000" // Цвет линии, отображающей текущее значение (по умолчанию красный)
+        tickLineWidth: 2 // толщина линий линейки
+        indicatorLineWidth: 3 // толщина линии текущего значения
+        labelColor: "#ffffff" // цвет текста (чисел) (по умолчанию = tickColor)
+        valueTextColor: "#ffffff" // цвет текущего значения (по умолчанию = tickColor)
     }
 
     Rectangle {
         anchors.fill: parent
         color: "#000000"
     }
-    
+
     Column {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: 30
-        
+
         SliderContainer {
             id: sliderContainer
             backgroundColor: "#33ffffff" // цвет подложки
@@ -46,7 +50,7 @@ Window {
             degree: -5.5 // угол
             sliderUnreliable: [false, true, false, true, false, true, false, true]  // правильность данных
         }
-        
+
          //Timer для проверки динамического изменения lineThickness
 //         Timer {
 //             interval: 2000
